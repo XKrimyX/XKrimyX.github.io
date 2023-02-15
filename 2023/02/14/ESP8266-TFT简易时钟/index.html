@@ -23,8 +23,9 @@
 <meta property="og:site_name" content="Krimy&#39;s Blog">
 <meta property="og:description" content="基于NodeMCU与TFT屏开发的简易时钟">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xkrimyx.github.io/tft_1.png">
 <meta property="article:published_time" content="2023-02-14T12:59:02.000Z">
-<meta property="article:modified_time" content="2023-02-14T15:58:14.356Z">
+<meta property="article:modified_time" content="2023-02-15T03:02:07.214Z">
 <meta property="article:author" content="Krimy">
 <meta property="article:tag" content="开发板">
 <meta property="article:tag" content="嵌入式">
@@ -32,6 +33,7 @@
 <meta property="article:tag" content="NodeMCU">
 <meta property="article:tag" content="C&#x2F;C++">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://xkrimyx.github.io/tft_1.png">
   
   
   
@@ -241,7 +243,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          206 字
+          806 字
         
       </span>
     
@@ -252,7 +254,7 @@
         
         
         
-          2 分钟
+          7 分钟
         
       </span>
     
@@ -318,11 +320,57 @@
 
 <br />  
 
-<h3 id="1-材料"><a href="#1-材料" class="headerlink" title="1.材料"></a><strong>1.材料</strong></h3><ul>
+<h3 id="1-准备"><a href="#1-准备" class="headerlink" title="1.准备"></a><strong>1.准备</strong></h3><h4 id="材料："><a href="#材料：" class="headerlink" title="材料："></a>材料：</h4><ul>
 <li>ESP8266-NodeMCU</li>
 <li>TFT屏(1.44英寸)</li>
 <li>杜邦线(母对母)</li>
 <li>数据线(Micro-USB)</li>
+</ul>
+<h4 id="库："><a href="#库：" class="headerlink" title="库："></a>库：</h4>  <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs cpp">  <span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;Arduino.h&gt;</span></span><br><span class="hljs-comment">/*配网*/</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;ESP8266WiFi.h&gt;</span>          </span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;DNSServer.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;ESP8266WebServer.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;WiFiManager.h&gt;</span></span><br><span class="hljs-comment">/*TFT*/</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;TFT_eSPI.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;SPI.h&gt;</span> </span><br><span class="hljs-comment">/*模*/</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;MyFonts.h&quot;</span><span class="hljs-comment">//导入字库        </span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;Pic_Connect.h&quot;</span><span class="hljs-comment">//导入连接图片</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;Pic_Weather.h&quot;</span><span class="hljs-comment">//导入天气图片</span></span><br><span class="hljs-comment">/*时间*/</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;NTPClient.h&gt;</span></span><br><span class="hljs-comment">/*解析*/</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;ESP8266HTTPClient.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;ArduinoJson.h&gt;</span></span><br></code></pre></td></tr></table></figure>
+
+<h4 id="引脚连接："><a href="#引脚连接：" class="headerlink" title="引脚连接："></a>引脚连接：</h4><table>
+<thead>
+<tr>
+<th align="center">TFT</th>
+<th align="center">NodeMCU</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">VCC</td>
+<td align="center">3V</td>
+</tr>
+<tr>
+<td align="center">GND</td>
+<td align="center">GND</td>
+</tr>
+<tr>
+<td align="center">LED</td>
+<td align="center">3V</td>
+</tr>
+<tr>
+<td align="center">CLK</td>
+<td align="center">D5</td>
+</tr>
+<tr>
+<td align="center">SDI</td>
+<td align="center">D7</td>
+</tr>
+<tr>
+<td align="center">RS</td>
+<td align="center">D3</td>
+</tr>
+<tr>
+<td align="center">RST</td>
+<td align="center">D4</td>
+</tr>
+<tr>
+<td align="center">CS</td>
+<td align="center">D8</td>
+</tr>
+</tbody></table>
+<h4 id="TFT-eSPI库配置："><a href="#TFT-eSPI库配置：" class="headerlink" title="TFT_eSPI库配置："></a>TFT_eSPI库配置：</h4><p>在使用TFT_eSPI库之前，需要根据自己的屏幕参数进行配置<br>首先找到库下的User_Setup.h文件，从上往下开始看，主要需要修改的有：</p>
+<ul>
+<li>选择驱动<br><img src="/tft_1.png" srcset="/img/loading.gif" lazyload alt="驱动"></li>
 </ul>
 
                 
