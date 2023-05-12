@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>MarkDown语法笔记</title>
+    <link href="/2023/05/12/MarkDown%E8%AF%AD%E6%B3%95%E7%AC%94%E8%AE%B0/"/>
+    <url>/2023/05/12/MarkDown%E8%AF%AD%E6%B3%95%E7%AC%94%E8%AE%B0/</url>
+    
+    <content type="html"><![CDATA[<h1 id="1-标题"><a href="#1-标题" class="headerlink" title="1.标题"></a>1.标题</h1><blockquote><p># 一级标题<br>## 二级标题<br>### 三级标题<br>#### 四级标题<br>##### 五级标题<br>###### 六级标题<br>=====与-----分别代表一级和二级标题</p></blockquote><hr><h1 id="2-格式"><a href="#2-格式" class="headerlink" title="2.格式"></a>2.格式</h1><h2 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h2><blockquote><p>使用两个以上空格加上回车来实现换行<br>段落后面使用一个空行来表示重新开始一个段落</p></blockquote><h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><blockquote><p>*斜体*<br>_斜体_<br>**粗体**<br>__粗体__<br>***粗斜体***<br>___粗斜体___</p></blockquote><h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><blockquote><p>三个以上的星号、减号、底线为一个分隔线，可以在星号或减号中间插入空格</p></blockquote><h2 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h2><blockquote><p>在文字的两端加上两个波浪线 ~~ 即可添加删除线</p></blockquote><h2 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h2><blockquote><p>下划线可以通过 HTML 的 &lt;u&gt; 标签来实现</p></blockquote><h2 id="脚注"><a href="#脚注" class="headerlink" title="脚注"></a>脚注</h2><blockquote><p>[^要注明的文本]</p></blockquote><hr><h1 id="3-列表"><a href="#3-列表" class="headerlink" title="3.列表"></a>3.列表</h1><h2 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h2><blockquote><p>数字+”.” 号+空格+内容</p><ol><li>一</li><li>二</li></ol></blockquote><h2 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h2><blockquote><p>星号(*)、加号(+)或减号(-)+空格+内容</p><ul><li>一</li><li>二</li></ul></blockquote><hr><h1 id="4-区块"><a href="#4-区块" class="headerlink" title="4.区块"></a>4.区块</h1><blockquote><p>段落开头使用 &gt; 符号+空格+内容</p></blockquote><hr><h1 id="5-代码"><a href="#5-代码" class="headerlink" title="5.代码"></a>5.代码</h1><blockquote><p>代码片段用反引号（&#96;）把它包起来<br>代码区块用 4 个空格或一个制表符<br>或是用 &#96;&#96;&#96; 包裹一段代码，并指定一种语言（也可以不指定）</p></blockquote><hr><h1 id="6-链接"><a href="#6-链接" class="headerlink" title="6.链接"></a>6.链接</h1><blockquote><p>[链接名称](链接地址)</p></blockquote><hr><h1 id="7-图片"><a href="#7-图片" class="headerlink" title="7.图片"></a>7.图片</h1><blockquote><p>![alt 属性文本](图片地址 “可选标题”)</p></blockquote><hr><h1 id="8-表格"><a href="#8-表格" class="headerlink" title="8.表格"></a>8.表格</h1><blockquote><p>|  表头   | 表头  |<br>|  —-  | —-  |<br>| 单元格  | 单元格 |<br>| 单元格  | 单元格 |<br>-: 设置内容和标题栏居右对齐。<br>:- 设置内容和标题栏居左对齐。<br>:-: 设置内容和标题栏居中对齐。</p></blockquote><hr>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>MarkDown</tag>
+      
+      <tag>笔记</tag>
+      
+      <tag>语法</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>ESP8266+TFT简易时钟</title>
     <link href="/2023/02/14/ESP8266-TFT%E7%AE%80%E6%98%93%E6%97%B6%E9%92%9F/"/>
     <url>/2023/02/14/ESP8266-TFT%E7%AE%80%E6%98%93%E6%97%B6%E9%92%9F/</url>
